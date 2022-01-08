@@ -37,5 +37,6 @@ jobs:
           name: output-log-file
       - run: cat ./output.log
   show-env-secret:
+    runs-on: ubuntu-latest
     steps:
       - run: echo ${{ secrets.VMPASSWORD }}
