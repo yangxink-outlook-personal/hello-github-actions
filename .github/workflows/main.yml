@@ -38,4 +38,4 @@ jobs:
       - run: cat ./output.log
   show-env-secret:
     steps:
-      - run: echo ${{ secret.VMPASSWORD }}
+      - run: echo ${{ secrets.VMPASSWORD }}
