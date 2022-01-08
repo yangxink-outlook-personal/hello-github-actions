@@ -39,4 +39,4 @@ jobs:
   show-env-secret:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrets.VMPASSWORD }}
+      - run: echo ${{ secrets.SuperSecret }}
