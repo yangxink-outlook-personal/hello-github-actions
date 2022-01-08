@@ -35,7 +35,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: output-log-file
-      #    path: output.log
       - run: cat ./output.log
-      #- run: ls -l -R  output.log
-      #- run: cat ./output.log/output.log
+  show-env-secret:
+    steps:
+      - run: echo ${{secretEnv.VMPASSWORD}}
