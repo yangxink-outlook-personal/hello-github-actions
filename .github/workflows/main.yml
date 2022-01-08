@@ -36,5 +36,5 @@ jobs:
         with:
           name: output-log-file
           path: output.log
-      - run: pwd
+      - run: ls -l -R 
       - run: cat output.log
