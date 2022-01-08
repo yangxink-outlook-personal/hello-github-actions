@@ -2,7 +2,6 @@ name: GitHub Actions Demo
 on: [push]
 jobs:
   Explore-GitHub-Actions:
-    environment: secretEnv
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -18,6 +17,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   calc-job:
     runs-on: ubuntu-latest
+    environment: secretEnv
     name: Save output
     steps:
       - shell: bash
