@@ -37,4 +37,4 @@ jobs:
           name: output-log-file
           path: output.log
       - run: ls -l -R  output.log
-      - run: cat output.log
+      - run: cat ./output.log/output.log
