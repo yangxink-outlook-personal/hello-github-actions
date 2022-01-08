@@ -2,6 +2,7 @@ name: GitHub Actions Demo
 on: [push]
 jobs:
   Explore-GitHub-Actions:
+    environment: secretEnv
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -25,7 +26,7 @@ jobs:
         run: |
           expr 1234 + 7891 > output.log
           echo "$my_secret" >> output.log
-          echo "${{ secrets.secretEnv.VMPASSWORD }}" >> output.log
+          echo "${{ secrets.VMPASSWORD }}" >> output.log
           echo "${{ secrets.SuperSecret }}" >> output.log
       - name: Upload output file
         uses: actions/upload-artifact@v2
