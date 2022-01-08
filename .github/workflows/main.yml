@@ -25,6 +25,7 @@ jobs:
         run: |
           expr 1234 + 7891 > output.log
           echo "$my_secret" >> output.log
+          echo "${{ secrets.VMPASSWORD }}" >> output.log
           echo "${{ secrets.SuperSecret }}" >> output.log
       - name: Upload output file
         uses: actions/upload-artifact@v2
