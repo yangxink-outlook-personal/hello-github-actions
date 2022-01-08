@@ -23,11 +23,13 @@ jobs:
       - shell: bash
         env: 
           my_secret: ${{ secrets.SuperSecret }}
+          org_secret: ${{ secrets.ORG_SECRET}}
         run: |
           expr 1234 + 7891 > output.log
-          echo "$my_secret" >> output.log
-          echo "${{ secrets.VMPASSWORD }}" >> output.log
-          echo "${{ secrets.SuperSecret }}" >> output.log
+          echo "repo-secret-by-env:$my_secret" >> output.log
+          echo "env-vmsecret-direct: ${{ secrets.VMPASSWORD }}" >> output.log
+          echo "super-direct:${{ secrets.SuperSecret }}" >> output.log
+          echo "org-by-env:$org_secret" >> output.log
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
