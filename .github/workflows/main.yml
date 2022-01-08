@@ -20,8 +20,11 @@ jobs:
     name: Save output
     steps:
       - shell: bash
+        env: 
+          my_secret: ${{ secrets.SuperSecret }}
         run: |
           expr 1234 + 7891 > output.log
+          echo "$my_secret" >> output.log
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
@@ -36,7 +39,4 @@ jobs:
         with:
           name: output-log-file
       - run: cat ./output.log
-  show-env-secret:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ secrets.SuperSecret }}
+
