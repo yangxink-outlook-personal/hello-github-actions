@@ -8,3 +8,5 @@ Push to main to trigger github action
 login aad with login action
 assign app register with aad a contributor to subscription
 change the encode to us
+aaz login should not work in branch other than main
+because aad is configured only for main
