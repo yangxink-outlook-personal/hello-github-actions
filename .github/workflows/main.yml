@@ -52,6 +52,7 @@ jobs:
   Run-Azure-Login-with-OpenID-Connect-and-PowerShell: 
     runs-on: windows-latest
     steps:
+      - run: chcp 65001
       - name: OIDC Login to Azure Public Cloud with AzPowershell (enableAzPSSession true)
         uses: azure/login@v1
         with:
